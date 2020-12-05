@@ -63,6 +63,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "terminal-table", "~> 1.8"
   spec.add_dependency "winrm", "~> 2.0"
   spec.add_dependency "winrm-fs", "~> 1.3"
+  spec.add_dependency "bunny", "~> 2.17"
 
   # there is a bug in puppetlabs_spec_helper for modules without fixtures
   spec.add_development_dependency "bundler", ">= 1.14"

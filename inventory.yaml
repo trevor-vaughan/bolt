@@ -1,0 +1,13 @@
+groups:
+  - name: test
+    targets:
+      - foo.bar.baz
+      - foo2.bar.baz
+    config:
+      transport: rabbitmq
+config:
+  rabbitmq:
+    server: 127.0.0.1
+    port: 5672
+    user: guest
+    pass: guest

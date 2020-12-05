@@ -24,6 +24,7 @@ end
 gem "paint", "~> 2.2"
 
 group(:test) do
+  gem "pry"
   gem "beaker-hostgenerator"
   gem "mocha", '~> 1.4.0'
   gem "rack-test", '~> 1.0'

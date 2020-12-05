@@ -6,6 +6,7 @@ require 'bolt/config/transport/orch'
 require 'bolt/config/transport/local'
 require 'bolt/config/transport/docker'
 require 'bolt/config/transport/remote'
+require 'bolt/config/transport/rabbitmq'
 
 module Bolt
   class Config
@@ -18,7 +19,8 @@ module Bolt
         'pcp'    => Bolt::Config::Transport::Orch,
         'local'  => Bolt::Config::Transport::Local,
         'docker' => Bolt::Config::Transport::Docker,
-        'remote' => Bolt::Config::Transport::Remote
+        'remote' => Bolt::Config::Transport::Remote,
+        'rabbitmq' => Bolt::Config::Transport::RabbitMQ
       }.freeze
 
       # Plugin definition. This is used by the JSON schemas to indicate that an option
@@ -513,6 +515,12 @@ module Bolt
         },
         "pcp" => {
           description: "A map of configuration options for the pcp transport.",
+          type: Hash,
+          _plugin: true,
+          _example: { "job-poll-interval" => 15, "job-poll-timeout" => 30 }
+        },
+        "rabbitmq" => {
+          description: "RabbitMQ",
           type: Hash,
           _plugin: true,
           _example: { "job-poll-interval" => 15, "job-poll-timeout" => 30 }
