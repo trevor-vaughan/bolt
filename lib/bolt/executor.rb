@@ -17,7 +17,7 @@ require 'bolt/transport/orch'
 require 'bolt/transport/local'
 require 'bolt/transport/docker'
 require 'bolt/transport/remote'
-require 'bolt/transport/rabbitmq'
+require 'bolt/transport/async/filesystem'
 require 'bolt/yarn'
 
 module Bolt
@@ -28,7 +28,7 @@ module Bolt
     local: Bolt::Transport::Local,
     docker: Bolt::Transport::Docker,
     remote: Bolt::Transport::Remote,
-    rabbitmq: Bolt::Transport::RabbitMQ
+    filesystem: Bolt::Transport::Async::Filesystem
   }.freeze
 
   class Executor
